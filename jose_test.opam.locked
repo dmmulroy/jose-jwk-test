@@ -1,0 +1,66 @@
+opam-version: "2.0"
+synopsis: "A short synopsis"
+description: "A longer description"
+maintainer: ["Maintainer Name"]
+authors: ["Author Name"]
+license: "LICENSE"
+tags: ["topics" "to describe" "your" "project"]
+homepage: "https://github.com/username/reponame"
+doc: "https://url/to/documentation"
+bug-reports: "https://github.com/username/reponame/issues"
+depends: [
+  "asn1-combinators" {= "0.2.6"}
+  "astring" {= "0.8.5"}
+  "base-threads" {= "base"}
+  "base-unix" {= "base"}
+  "base64" {= "3.5.1"}
+  "cmdliner" {= "1.2.0"}
+  "conf-gmp" {= "4"}
+  "conf-gmp-powm-sec" {= "3"}
+  "cppo" {= "1.6.9"}
+  "csexp" {= "1.5.2"}
+  "cstruct" {= "6.2.0"}
+  "domain-name" {= "0.4.0"}
+  "dune" {= "3.9.1"}
+  "dune-configurator" {= "3.9.1"}
+  "duration" {= "0.2.1"}
+  "eqaf" {= "0.9"}
+  "fmt" {= "0.9.0"}
+  "gmap" {= "0.3.0"}
+  "ipaddr" {= "5.5.0"}
+  "jose" {= "0.9.0"}
+  "logs" {= "0.7.0"}
+  "macaddr" {= "5.5.0"}
+  "mirage-crypto" {= "0.11.1"}
+  "mirage-crypto-ec" {= "0.11.1"}
+  "mirage-crypto-pk" {= "0.11.1"}
+  "mirage-crypto-rng" {= "0.11.1"}
+  "ocaml" {= "4.14.1"}
+  "ocamlbuild" {= "0.14.2"}
+  "ocamlfind" {= "1.9.6"}
+  "pbkdf" {= "1.2.0"}
+  "ptime" {= "1.1.0"}
+  "seq" {= "base"}
+  "sexplib0" {= "v0.16.0"}
+  "topkg" {= "1.0.7"}
+  "x509" {= "0.16.5"}
+  "yojson" {= "2.1.0"}
+  "zarith" {= "1.13"}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+dev-repo: "git+https://github.com/username/reponame.git"
+name: "jose_test"
+version: "dev"
